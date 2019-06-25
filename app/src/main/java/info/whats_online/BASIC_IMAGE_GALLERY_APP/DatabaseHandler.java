@@ -51,11 +51,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    /**
-     * All CRUD(Create, Read, Update, Delete) Operations
-     */
 
-    //Insert values to the table contacts
+    //Insert values to the table images
     public void addContacts(Contact contact){
       SQLiteDatabase db = this.getReadableDatabase();
         ContentValues values=new ContentValues();
@@ -70,7 +67,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     /**
-     *Getting All Contacts
+     *Getting All images
      **/
 
     public List<Contact> getAllContacts() {
@@ -99,33 +96,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contactList;
     }
 
-    /**
-     *Updating single contact
-     **/
 
-    public int updateContact(Contact contact, int id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(KEY_FNAME, contact.getFName());
-        values.put(KEY_POTO, contact.getImage());
-
-
-        // updating row
-        return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(id) });
-    }
-
-/*    /**
-     *Deleting single contact
-     **
-
-    public void deleteContact(int Id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
-                new String[] { String.valueOf(Id) });
-        db.close();
-    }
- */
 
 }

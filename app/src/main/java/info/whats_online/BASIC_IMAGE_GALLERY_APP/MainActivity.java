@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
     private DatabaseHandler db;
     private String f_name;
     private  ListView lv;
-    //private dataAdapter data;
     private Contact dataModel;
     private Bitmap bp;
     private byte[] photo;
@@ -45,7 +44,6 @@ public class MainActivity extends Activity {
         //Instantiate database handler
         db=new DatabaseHandler(this);
 
-       // lv = (ListView) findViewById(R.id.list1);
         pic= (ImageView) findViewById(R.id.pic);
         fname=(EditText) findViewById(R.id.txt1);
     }
